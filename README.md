@@ -78,9 +78,30 @@ $$W + \text{toRecipient} + \text{toSender} = W + \text{toRecipient} + (T - W - \
 
 ## Live Onyx Testnet (`onyx-1`)
 
-- **Pure Package**: `https://onyx.testnets.gno.land/p/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streammath` (Block `#1402502`, Tx `+yEajXqZmFWdoA20S2hG1oJkb9PiyKN59hU7XEnlcN0=`)
-- **Escrow Realm**: `https://onyx.testnets.gno.land/r/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streamledger` (Block `#1402593`, Tx `1Qa34eO2nIBee9TzWLadcO3FZFfawQ+3Jaeham6eJno=`)
+- **Pure Package**: [`https://onyx.testnets.gno.land/p/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streammath`](https://onyx.testnets.gno.land/p/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streammath) (Block `#1402502`, Tx `+yEajXqZmFWdoA20S2hG1oJkb9PiyKN59hU7XEnlcN0=`)
+- **Escrow Realm**: [`https://onyx.testnets.gno.land/r/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streamledger`](https://onyx.testnets.gno.land/r/g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0/streamledger) (Block `#1402593`, Tx `1Qa34eO2nIBee9TzWLadcO3FZFfawQ+3Jaeham6eJno=`)
 - **Deployer Address**: `g10epvakwr3x5cd3yu9zstusltjwklke9zxz28d0`
+- **Test Recipient Address**: `g15yswnh9czv48lfg8rspsqwjhf9c3rpadk0nf8v`
+
+### Verified Live On-Chain Transactions (`onyx-1`)
+
+| # | Action | Block | Result / Conservation Proof | Tx Hash |
+| --- | --- | --- | --- | --- |
+| 1 | `CreateStream` #1 (Builder Retention Grant, 10 GNOT, cliff) | `#1415139` | Locked `10,000,000 ugnot` | `QefcScPF2+XNVcqSk0HAD4B/c3KDiQq7gyS4JV2XHw0=` |
+| 2 | `CreateStream` #2 (Core Contributor Payroll, 5 GNOT) | `#1415140` | Locked `5,000,000 ugnot` | `uGGwymFvslq+dPJwI0nLmudw+l8TKygXslaUKDkzkaw=` |
+| 3 | `CreateStream` #3 (Zero-Dust Prime Settlement, `2.000003` GNOT) | `#1415141` | Locked `2,000,003 ugnot` | `YffFw2+l5ayTDYWUcrm0ZCgImansmDpsZu7nSeJ1WNQ=` |
+| 4 | `Withdraw(2)` by recipient | `#1415146` | Claimed `1,800,000 ugnot` | `llabejKhwDJE3MCeWO/bSTGC1mTmYr3qiJ8eJJSJb/Q=` |
+| 5 | `CancelStream(3)` by sender | `#1415147` | **`666,667 + 1,333,336 == 2,000,003` (0 dust!)** | `jOJYciKDTDdWNlgHuR+Tvqkd4g2TchMStSelk5/UU5U=` |
+
+- **Live `StatsJSON()` Parity**: `tvlUgnot: 13200000 == escrowBalanceUgnot: 13200000` (100% exact escrow backing).
+
+### Demo Video & Live `gnoweb` Screenshots
+
+- **Demo Video (60s, 1280×720 H.264)**: [`docs/streamledger_demo.mp4`](docs/streamledger_demo.mp4)
+
+| Live Dashboard | Stream #2 Detail | Stream #3 Zero-Dust Proof | Recipient Portfolio |
+| --- | --- | --- | --- |
+| ![Dashboard](docs/shot_1_dashboard.png) | ![Stream 2](docs/shot_2_stream2.png) | ![Zero-Dust](docs/shot_3_zerodust.png) | ![Portfolio](docs/shot_4_portfolio.png) |
 
 ---
 
